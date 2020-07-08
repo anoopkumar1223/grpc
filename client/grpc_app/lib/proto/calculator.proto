@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calculatorProto;
+
+message sendNumbers{
+    int64 a = 1;
+    int64 b = 2;
+}
+
+message getResult{
+    int64 result = 1;
+}
+
+service Calculate{
+    rpc add(sendNumbers) returns (getResult){};
+    rpc subtract(sendNumbers) returns (getResult){};
+    rpc multiply(sendNumbers) returns (getResult){};
+    rpc divide(sendNumbers) returns (getResult){};
+}
